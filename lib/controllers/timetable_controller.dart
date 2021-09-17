@@ -81,7 +81,7 @@ class TimetableController extends ChangeNotifier {
     days = _sortDays(week, context: context);
 
     // Jump to next week on weekends
-    if (initial && (days?.length ?? 0) > 0 && days!.last.first.date.weekday < DateTime.now().weekday) return next(context);
+    if (initial && (days?.length ?? 0) > 0 && days!.last.last.end.isBefore(DateTime.now())) return next(context);
 
     notifyListeners();
   }
