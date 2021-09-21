@@ -95,8 +95,7 @@ class TimetableController extends ChangeNotifier {
     if (!_differentDate(week.start, Week.fromId(0).start)) week.start = TimetableController.getSchoolYearStart();
 
     currentWeek = week;
-    // when currentWeekId has no value, set prevId to id
-    previousWeekId = currentWeekId == -1 ? id : currentWeekId;
+    previousWeekId = currentWeekId;
     currentWeekId = id;
     return false;
   }
